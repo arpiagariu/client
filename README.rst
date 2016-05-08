@@ -15,9 +15,9 @@ Automated Builds
 ----------------
 
 +----------+-----------------+---------------+
-| Master   | |master-status| | |master-docs| |
+| master   | |master-status| | |master-docs| |
 +----------+-----------------+---------------+
-| Dev/VM   | |dev-status|    | |dev-docs|    |
+| dev      | |dev-status|    | |dev-docs|    |
 +----------+-----------------+---------------+
 | libcloud | |lib-status|    | |lib-docs|    |
 +----------+-----------------+---------------+
