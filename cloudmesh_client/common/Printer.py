@@ -9,6 +9,7 @@ from prettytable import PrettyTable
 from cloudmesh_client.common.util import convert_from_unicode
 from cloudmesh_client.shell.console import Console
 from cloudmesh_client.common.dotdict import dotdict
+from pprint import pprint
 
 class Printer(object):
     @classmethod
@@ -224,6 +225,7 @@ class Printer(object):
         x.max_width = max_width
 
         if sort_keys:
+            # pprint (d)
             if type(sort_keys) is str:
                 sorted_list = sorted(d, key=lambda x: d[x][sort_keys])
             elif type(sort_keys) == tuple:

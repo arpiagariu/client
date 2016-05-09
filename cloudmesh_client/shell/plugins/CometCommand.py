@@ -30,6 +30,7 @@ class CometCommand(PluginCommand, CometPluginCommand):
                comet ll [CLUSTERID] [--format=FORMAT]
                comet cluster [CLUSTERID]
                              [--format=FORMAT]
+                             [--sort=SORTKEY]
                comet computeset [COMPUTESETID]
                             [--allocation=ALLOCATION]
                             [--cluster=CLUSTERID]
@@ -50,6 +51,7 @@ class CometCommand(PluginCommand, CometPluginCommand):
                 --format=FORMAT         Format is either table, json, yaml,
                                         csv, rest
                                         [default: table]
+                --sort=SORTKEY          Sorting key for the table view
                 --count=NUMNODES        Number of nodes to be powered on.
                                         When this option is used, the comet system
                                         will find a NUMNODES number of arbitrary nodes
@@ -354,7 +356,8 @@ class CometCommand(PluginCommand, CometPluginCommand):
         elif arguments["cluster"]:
 
             cluster_id = arguments["CLUSTERID"]
-            print(Cluster.list(cluster_id, format=output_format))
+            sortkey = arguments["--sort"]
+            print(Cluster.list(cluster_id, format=output_format, sort=sortkey))
 
         elif arguments["computeset"]:
             computeset_id = arguments["COMPUTESETID"] or None
